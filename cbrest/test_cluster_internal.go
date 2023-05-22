@@ -1,6 +1,6 @@
 package cbrest
 
-import "github.com/couchbase/tools-common/cbvalue"
+import "github.com/mattyhall/tools-common/cbvalue"
 
 // node is the structure used when marshalling basic node information.
 type node struct {

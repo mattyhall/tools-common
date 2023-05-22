@@ -3,7 +3,7 @@ package retry
 import (
 	"time"
 
-	"github.com/couchbase/tools-common/maths"
+	"github.com/mattyhall/tools-common/maths"
 )
 
 // Algorithm represents a retry algorithm used to determine backoff before retrying function execution.

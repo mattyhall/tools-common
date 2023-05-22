@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objerr"
-	"github.com/couchbase/tools-common/objstore/objval"
-	"github.com/couchbase/tools-common/testutil"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/testutil"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/s3"

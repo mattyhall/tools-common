@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/netutil"
+	"github.com/mattyhall/tools-common/netutil"
 )
 
 func TestShouldRetry(t *testing.T) {

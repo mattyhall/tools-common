@@ -10,9 +10,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/couchbase/tools-common/fsutil"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/fsutil"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objval"
 
 	"github.com/stretchr/testify/require"
 )

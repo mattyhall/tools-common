@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/system"
+	"github.com/mattyhall/tools-common/system"
 )
 
 func TestOptionsDefaults(t *testing.T) {

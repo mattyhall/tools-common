@@ -5,10 +5,10 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/couchbase/tools-common/fsutil"
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/fsutil"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 // SyncOptions encapsulates all the options available when syncing a directory/object to/from a remote cloud.

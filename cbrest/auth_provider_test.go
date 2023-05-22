@@ -3,9 +3,9 @@ package cbrest
 import (
 	"testing"
 
-	"github.com/couchbase/tools-common/aprov"
-	"github.com/couchbase/tools-common/connstr"
-	"github.com/couchbase/tools-common/log"
+	"github.com/mattyhall/tools-common/aprov"
+	"github.com/mattyhall/tools-common/connstr"
+	"github.com/mattyhall/tools-common/log"
 
 	"github.com/stretchr/testify/require"
 )

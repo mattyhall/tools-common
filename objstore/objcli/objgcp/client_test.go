@@ -19,10 +19,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/api/iterator"
 
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objerr"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 func TestNewClient(t *testing.T) {

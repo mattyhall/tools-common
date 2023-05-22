@@ -1,7 +1,7 @@
 package deque
 
 import (
-	"github.com/couchbase/tools-common/ringbuf"
+	"github.com/mattyhall/tools-common/ringbuf"
 )
 
 const (

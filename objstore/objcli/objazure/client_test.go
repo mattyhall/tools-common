@@ -19,9 +19,9 @@ import (
 	gomock "github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objval"
-	"github.com/couchbase/tools-common/ptrutil"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/ptrutil"
 )
 
 func TestNewClient(t *testing.T) {

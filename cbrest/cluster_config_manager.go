@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/couchbase/tools-common/envvar"
-	"github.com/couchbase/tools-common/log"
+	"github.com/mattyhall/tools-common/envvar"
+	"github.com/mattyhall/tools-common/log"
 )
 
 // DefaultCCMaxAge is the maximum amount of time a cluster config will be in use before the client begins to try to

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/couchbase/tools-common/ioiface"
-	"github.com/couchbase/tools-common/maths"
+	"github.com/mattyhall/tools-common/ioiface"
+	"github.com/mattyhall/tools-common/maths"
 
 	"golang.org/x/time/rate"
 )

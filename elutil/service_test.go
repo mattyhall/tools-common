@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/aprov"
-	"github.com/couchbase/tools-common/cbrest"
+	"github.com/mattyhall/tools-common/aprov"
+	"github.com/mattyhall/tools-common/cbrest"
 )
 
 func TestNewService(t *testing.T) {

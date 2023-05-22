@@ -5,8 +5,8 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/couchbase/tools-common/format"
-	"github.com/couchbase/tools-common/log"
+	"github.com/mattyhall/tools-common/format"
+	"github.com/mattyhall/tools-common/log"
 )
 
 // Information represents useful system information which is logged by 'cbbackupmgr' at the beginning of each command.

@@ -17,9 +17,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/exp/maps"
 
-	"github.com/couchbase/tools-common/objstore/objerr"
-	"github.com/couchbase/tools-common/objstore/objval"
-	"github.com/couchbase/tools-common/testutil"
+	"github.com/mattyhall/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/testutil"
 )
 
 // TestClient implementation of the 'Client' interface which stores state in memory, and can be used to avoid having to

@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/testutil"
+	"github.com/mattyhall/tools-common/testutil"
 )
 
 // TestHandlers is a readbility wrapper around the endpoint handlers for a test cluster.

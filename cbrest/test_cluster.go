@@ -12,8 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/couchbase/tools-common/netutil"
-	"github.com/couchbase/tools-common/testutil"
+	"github.com/mattyhall/tools-common/netutil"
+	"github.com/mattyhall/tools-common/testutil"
 
 	"github.com/stretchr/testify/require"
 )

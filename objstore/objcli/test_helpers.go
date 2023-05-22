@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/objstore/objerr"
-	"github.com/couchbase/tools-common/objstore/objval"
-	"github.com/couchbase/tools-common/testutil"
+	"github.com/mattyhall/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/testutil"
 )
 
 // TestUploadRAW uploads the given raw data.

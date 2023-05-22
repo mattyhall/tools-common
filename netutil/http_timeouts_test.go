@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/ptrutil"
+	"github.com/mattyhall/tools-common/ptrutil"
 )
 
 func TestHTTPTimeoutsUnmarshalJSON(t *testing.T) {

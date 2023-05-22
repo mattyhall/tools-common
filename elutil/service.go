@@ -8,10 +8,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/couchbase/tools-common/aprov"
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/maths"
+	"github.com/mattyhall/tools-common/aprov"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/maths"
 )
 
 const (

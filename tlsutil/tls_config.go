@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/couchbase/tools-common/errutil"
+	"github.com/mattyhall/tools-common/errutil"
 
 	"github.com/youmark/pkcs8"
 	"golang.org/x/crypto/pkcs12"

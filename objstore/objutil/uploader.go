@@ -9,11 +9,11 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/maths"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objcli/objaws"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/maths"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objcli/objaws"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 // MaxUploadParts is the hard limit on the number of parts that can be uploaded by a 'MPUploader'.

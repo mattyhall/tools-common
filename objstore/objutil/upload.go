@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/couchbase/tools-common/ioiface"
-	"github.com/couchbase/tools-common/maths"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objcli/objaws"
+	"github.com/mattyhall/tools-common/ioiface"
+	"github.com/mattyhall/tools-common/maths"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objcli/objaws"
 
 	"github.com/aws/aws-sdk-go/aws"
 )

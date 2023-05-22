@@ -3,7 +3,7 @@ package system
 import (
 	"sync"
 
-	"github.com/couchbase/tools-common/maths"
+	"github.com/mattyhall/tools-common/maths"
 )
 
 var (

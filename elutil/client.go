@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/couchbase/tools-common/cbrest"
+	"github.com/mattyhall/tools-common/cbrest"
 )
 
 const (

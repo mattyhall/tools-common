@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/couchbase/tools-common/aprov"
-	"github.com/couchbase/tools-common/connstr"
-	"github.com/couchbase/tools-common/log"
+	"github.com/mattyhall/tools-common/aprov"
+	"github.com/mattyhall/tools-common/connstr"
+	"github.com/mattyhall/tools-common/log"
 )
 
 // AuthProvider is the auth provider for the REST client which handles providing credentials/hosts required to execute

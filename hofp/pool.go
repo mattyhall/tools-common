@@ -6,7 +6,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/couchbase/tools-common/log"
+	"github.com/mattyhall/tools-common/log"
 )
 
 // Function is a higher order function to be executed by the worker pool, where possible, the function should honor the

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/couchbase/tools-common/parse"
+	"github.com/mattyhall/tools-common/parse"
 )
 
 // GetInt returns the int value of the environmental variable varName  if the env var is not an int or empty it will

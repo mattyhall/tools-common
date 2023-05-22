@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/sns"
 
-	"github.com/couchbase/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objerr"
 )
 
 // handleError converts an error relating accessing an object via its key into a user friendly error where possible.

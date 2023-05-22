@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/ptrutil"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/ptrutil"
 )
 
 func TestFreeListLengthOne(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objerr"
 )
 
 func respError(code bloberror.Code) *azcore.ResponseError {

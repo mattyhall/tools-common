@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/maths"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/maths"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 // MPDownloaderOptions encapsulates the options available when creating a 'MPDownloader'.

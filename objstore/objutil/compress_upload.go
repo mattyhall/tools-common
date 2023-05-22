@@ -13,13 +13,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/couchbase/tools-common/format"
-	"github.com/couchbase/tools-common/freelist"
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objcli/objaws"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/format"
+	"github.com/mattyhall/tools-common/freelist"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objcli/objaws"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 // PartCompleteFunc is called once a part of the zip file has been uploaded. size is the size of the part uploaded.

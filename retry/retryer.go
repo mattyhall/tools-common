@@ -5,7 +5,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/couchbase/tools-common/maths"
+	"github.com/mattyhall/tools-common/maths"
 )
 
 // RetryableFunc represents a function which is retryable.

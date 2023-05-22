@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/couchbase/tools-common/netutil"
-	"github.com/couchbase/tools-common/ptrutil"
+	"github.com/mattyhall/tools-common/netutil"
+	"github.com/mattyhall/tools-common/ptrutil"
 )
 
 // GetHTTPTimeouts returns the timeouts that should be used for a HTTP client from the environment or uses provided

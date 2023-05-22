@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 // ErrInvalidCloudPath returns if the user has incorrectly used the cloud style scheme prefixed argument; the error

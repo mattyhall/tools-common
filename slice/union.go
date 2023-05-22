@@ -1,6 +1,6 @@
 package slice
 
-import "github.com/couchbase/tools-common/maputil"
+import "github.com/mattyhall/tools-common/maputil"
 
 // Union returns a slice of elements that are present in both input slices.
 //

@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/couchbase/tools-common/netutil"
+	"github.com/mattyhall/tools-common/netutil"
 )
 
 // Method is a readability wrapper around the method for a given REST request; only the methods defined in the 'http'

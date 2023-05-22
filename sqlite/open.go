@@ -3,7 +3,7 @@ package sqlite
 import (
 	"database/sql"
 
-	"github.com/couchbase/tools-common/syncutil"
+	"github.com/mattyhall/tools-common/syncutil"
 )
 
 // initBarrier ensures that a single thread performs initialization of the SQLite library.

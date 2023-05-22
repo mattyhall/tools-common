@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/time/rate"
 
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 const (

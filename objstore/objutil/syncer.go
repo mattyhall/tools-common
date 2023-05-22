@@ -9,12 +9,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/couchbase/tools-common/fsutil"
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/ioiface"
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/objstore/objval"
-	"github.com/couchbase/tools-common/ratelimit"
+	"github.com/mattyhall/tools-common/fsutil"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/ioiface"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/ratelimit"
 )
 
 // Syncer exposes the ability to sync files and directories to/from a remote cloud provider.

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/couchbase/tools-common/log"
+	"github.com/mattyhall/tools-common/log"
 	"github.com/stretchr/testify/require"
 )
 

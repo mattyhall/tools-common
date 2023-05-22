@@ -17,12 +17,12 @@ import (
 	"golang.org/x/exp/slices"
 	"google.golang.org/api/iterator"
 
-	"github.com/couchbase/tools-common/hofp"
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/objstore/objcli"
-	"github.com/couchbase/tools-common/objstore/objerr"
-	"github.com/couchbase/tools-common/objstore/objval"
-	"github.com/couchbase/tools-common/system"
+	"github.com/mattyhall/tools-common/hofp"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/objstore/objcli"
+	"github.com/mattyhall/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/system"
 )
 
 // Client implements the 'objcli.Client' interface allowing the creation/management of objects stored in Google Storage.

@@ -6,7 +6,7 @@ import (
 	"io"
 	"regexp"
 
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 // IterateFunc is the function used when iterating over objects, this function will be called once for each object whose

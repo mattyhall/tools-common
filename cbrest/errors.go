@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/couchbase/tools-common/format"
+	"github.com/mattyhall/tools-common/format"
 )
 
 var (

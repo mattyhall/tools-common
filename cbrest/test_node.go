@@ -1,6 +1,6 @@
 package cbrest
 
-import "github.com/couchbase/tools-common/cbvalue"
+import "github.com/mattyhall/tools-common/cbvalue"
 
 // TestNodes is a readbility wrapper around a slice of test nodes.
 type TestNodes []*TestNode

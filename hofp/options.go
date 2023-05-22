@@ -3,9 +3,9 @@ package hofp
 import (
 	"context"
 
-	"github.com/couchbase/tools-common/log"
-	"github.com/couchbase/tools-common/maths"
-	"github.com/couchbase/tools-common/system"
+	"github.com/mattyhall/tools-common/log"
+	"github.com/mattyhall/tools-common/maths"
+	"github.com/mattyhall/tools-common/system"
 )
 
 // Options encapsulates the available options which can be used when creating a worker pool.

@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/couchbase/tools-common/errutil"
-	"github.com/couchbase/tools-common/maths"
-	"github.com/couchbase/tools-common/netutil"
-	"github.com/couchbase/tools-common/ptrutil"
+	"github.com/mattyhall/tools-common/errutil"
+	"github.com/mattyhall/tools-common/maths"
+	"github.com/mattyhall/tools-common/netutil"
+	"github.com/mattyhall/tools-common/ptrutil"
 )
 
 // newHTTPClient returns a new HTTP client with the given client/transport.

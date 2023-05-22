@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"path"
 
-	"github.com/couchbase/tools-common/objstore/objerr"
+	"github.com/mattyhall/tools-common/objstore/objerr"
 
 	"cloud.google.com/go/storage"
 	"github.com/google/uuid"

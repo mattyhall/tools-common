@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/couchbase/tools-common/errutil"
-	"github.com/couchbase/tools-common/objstore/objval"
+	"github.com/mattyhall/tools-common/errutil"
+	"github.com/mattyhall/tools-common/objstore/objval"
 )
 
 func TestParseCloudOrFileURL(t *testing.T) {
