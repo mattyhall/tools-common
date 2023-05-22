@@ -15,7 +15,7 @@ type mockServiceAPI struct {
 }
 
 // AbortMultipartUpload provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) AbortMultipartUpload(_a0 context.Context, _a1 *s3.AbortMultipartUploadInput, _a2 ...OptionFn) (*s3.AbortMultipartUploadOutput, error) {
+func (_m *mockServiceAPI) AbortMultipartUpload(_a0 context.Context, _a1 *s3.AbortMultipartUploadInput, _a2 ...func(*s3.Options)) (*s3.AbortMultipartUploadOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -27,10 +27,10 @@ func (_m *mockServiceAPI) AbortMultipartUpload(_a0 context.Context, _a1 *s3.Abor
 
 	var r0 *s3.AbortMultipartUploadOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.AbortMultipartUploadInput, ...OptionFn) (*s3.AbortMultipartUploadOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.AbortMultipartUploadInput, ...func(*s3.Options)) (*s3.AbortMultipartUploadOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.AbortMultipartUploadInput, ...OptionFn) *s3.AbortMultipartUploadOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.AbortMultipartUploadInput, ...func(*s3.Options)) *s3.AbortMultipartUploadOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -38,7 +38,7 @@ func (_m *mockServiceAPI) AbortMultipartUpload(_a0 context.Context, _a1 *s3.Abor
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.AbortMultipartUploadInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.AbortMultipartUploadInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -48,7 +48,7 @@ func (_m *mockServiceAPI) AbortMultipartUpload(_a0 context.Context, _a1 *s3.Abor
 }
 
 // CompleteMultipartUpload provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) CompleteMultipartUpload(_a0 context.Context, _a1 *s3.CompleteMultipartUploadInput, _a2 ...OptionFn) (*s3.CompleteMultipartUploadOutput, error) {
+func (_m *mockServiceAPI) CompleteMultipartUpload(_a0 context.Context, _a1 *s3.CompleteMultipartUploadInput, _a2 ...func(*s3.Options)) (*s3.CompleteMultipartUploadOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -60,10 +60,10 @@ func (_m *mockServiceAPI) CompleteMultipartUpload(_a0 context.Context, _a1 *s3.C
 
 	var r0 *s3.CompleteMultipartUploadOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.CompleteMultipartUploadInput, ...OptionFn) (*s3.CompleteMultipartUploadOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.CompleteMultipartUploadInput, ...func(*s3.Options)) (*s3.CompleteMultipartUploadOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.CompleteMultipartUploadInput, ...OptionFn) *s3.CompleteMultipartUploadOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.CompleteMultipartUploadInput, ...func(*s3.Options)) *s3.CompleteMultipartUploadOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -71,7 +71,7 @@ func (_m *mockServiceAPI) CompleteMultipartUpload(_a0 context.Context, _a1 *s3.C
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.CompleteMultipartUploadInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.CompleteMultipartUploadInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -81,7 +81,7 @@ func (_m *mockServiceAPI) CompleteMultipartUpload(_a0 context.Context, _a1 *s3.C
 }
 
 // CreateMultipartUpload provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) CreateMultipartUpload(_a0 context.Context, _a1 *s3.CreateMultipartUploadInput, _a2 ...OptionFn) (*s3.CreateMultipartUploadOutput, error) {
+func (_m *mockServiceAPI) CreateMultipartUpload(_a0 context.Context, _a1 *s3.CreateMultipartUploadInput, _a2 ...func(*s3.Options)) (*s3.CreateMultipartUploadOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -93,10 +93,10 @@ func (_m *mockServiceAPI) CreateMultipartUpload(_a0 context.Context, _a1 *s3.Cre
 
 	var r0 *s3.CreateMultipartUploadOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.CreateMultipartUploadInput, ...OptionFn) (*s3.CreateMultipartUploadOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.CreateMultipartUploadInput, ...func(*s3.Options)) (*s3.CreateMultipartUploadOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.CreateMultipartUploadInput, ...OptionFn) *s3.CreateMultipartUploadOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.CreateMultipartUploadInput, ...func(*s3.Options)) *s3.CreateMultipartUploadOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -104,7 +104,7 @@ func (_m *mockServiceAPI) CreateMultipartUpload(_a0 context.Context, _a1 *s3.Cre
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.CreateMultipartUploadInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.CreateMultipartUploadInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -114,7 +114,7 @@ func (_m *mockServiceAPI) CreateMultipartUpload(_a0 context.Context, _a1 *s3.Cre
 }
 
 // DeleteObjects provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) DeleteObjects(_a0 context.Context, _a1 *s3.DeleteObjectsInput, _a2 ...OptionFn) (*s3.DeleteObjectsOutput, error) {
+func (_m *mockServiceAPI) DeleteObjects(_a0 context.Context, _a1 *s3.DeleteObjectsInput, _a2 ...func(*s3.Options)) (*s3.DeleteObjectsOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -126,10 +126,10 @@ func (_m *mockServiceAPI) DeleteObjects(_a0 context.Context, _a1 *s3.DeleteObjec
 
 	var r0 *s3.DeleteObjectsOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.DeleteObjectsInput, ...OptionFn) (*s3.DeleteObjectsOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.DeleteObjectsInput, ...func(*s3.Options)) (*s3.DeleteObjectsOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.DeleteObjectsInput, ...OptionFn) *s3.DeleteObjectsOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.DeleteObjectsInput, ...func(*s3.Options)) *s3.DeleteObjectsOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -137,7 +137,7 @@ func (_m *mockServiceAPI) DeleteObjects(_a0 context.Context, _a1 *s3.DeleteObjec
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.DeleteObjectsInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.DeleteObjectsInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -147,7 +147,7 @@ func (_m *mockServiceAPI) DeleteObjects(_a0 context.Context, _a1 *s3.DeleteObjec
 }
 
 // GetObject provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) GetObject(_a0 context.Context, _a1 *s3.GetObjectInput, _a2 ...OptionFn) (*s3.GetObjectOutput, error) {
+func (_m *mockServiceAPI) GetObject(_a0 context.Context, _a1 *s3.GetObjectInput, _a2 ...func(*s3.Options)) (*s3.GetObjectOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -159,10 +159,10 @@ func (_m *mockServiceAPI) GetObject(_a0 context.Context, _a1 *s3.GetObjectInput,
 
 	var r0 *s3.GetObjectOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.GetObjectInput, ...OptionFn) (*s3.GetObjectOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.GetObjectInput, ...func(*s3.Options)) (*s3.GetObjectOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.GetObjectInput, ...OptionFn) *s3.GetObjectOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.GetObjectInput, ...func(*s3.Options)) *s3.GetObjectOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -170,7 +170,7 @@ func (_m *mockServiceAPI) GetObject(_a0 context.Context, _a1 *s3.GetObjectInput,
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.GetObjectInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.GetObjectInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -180,7 +180,7 @@ func (_m *mockServiceAPI) GetObject(_a0 context.Context, _a1 *s3.GetObjectInput,
 }
 
 // HeadObject provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) HeadObject(_a0 context.Context, _a1 *s3.HeadObjectInput, _a2 ...OptionFn) (*s3.HeadObjectOutput, error) {
+func (_m *mockServiceAPI) HeadObject(_a0 context.Context, _a1 *s3.HeadObjectInput, _a2 ...func(*s3.Options)) (*s3.HeadObjectOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -192,10 +192,10 @@ func (_m *mockServiceAPI) HeadObject(_a0 context.Context, _a1 *s3.HeadObjectInpu
 
 	var r0 *s3.HeadObjectOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.HeadObjectInput, ...OptionFn) (*s3.HeadObjectOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.HeadObjectInput, ...func(*s3.Options)) (*s3.HeadObjectOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.HeadObjectInput, ...OptionFn) *s3.HeadObjectOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.HeadObjectInput, ...func(*s3.Options)) *s3.HeadObjectOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -203,7 +203,7 @@ func (_m *mockServiceAPI) HeadObject(_a0 context.Context, _a1 *s3.HeadObjectInpu
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.HeadObjectInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.HeadObjectInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -213,7 +213,7 @@ func (_m *mockServiceAPI) HeadObject(_a0 context.Context, _a1 *s3.HeadObjectInpu
 }
 
 // ListObjectsV2Pages provides a mock function with given fields: _a0, _a1, _a2, _a3
-func (_m *mockServiceAPI) ListObjectsV2Pages(_a0 context.Context, _a1 *s3.ListObjectsV2Input, _a2 func(*s3.ListObjectsV2Output, bool) bool, _a3 ...OptionFn) error {
+func (_m *mockServiceAPI) ListObjectsV2Pages(_a0 context.Context, _a1 *s3.ListObjectsV2Input, _a2 func(*s3.ListObjectsV2Output, bool) bool, _a3 ...func(*s3.Options)) error {
 	_va := make([]interface{}, len(_a3))
 	for _i := range _a3 {
 		_va[_i] = _a3[_i]
@@ -224,7 +224,7 @@ func (_m *mockServiceAPI) ListObjectsV2Pages(_a0 context.Context, _a1 *s3.ListOb
 	ret := _m.Called(_ca...)
 
 	var r0 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.ListObjectsV2Input, func(*s3.ListObjectsV2Output, bool) bool, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.ListObjectsV2Input, func(*s3.ListObjectsV2Output, bool) bool, ...func(*s3.Options)) error); ok {
 		r0 = rf(_a0, _a1, _a2, _a3...)
 	} else {
 		r0 = ret.Error(0)
@@ -234,7 +234,7 @@ func (_m *mockServiceAPI) ListObjectsV2Pages(_a0 context.Context, _a1 *s3.ListOb
 }
 
 // ListPartsPages provides a mock function with given fields: _a0, _a1, _a2, _a3
-func (_m *mockServiceAPI) ListPartsPages(_a0 context.Context, _a1 *s3.ListPartsInput, _a2 func(*s3.ListPartsOutput, bool) bool, _a3 ...OptionFn) error {
+func (_m *mockServiceAPI) ListPartsPages(_a0 context.Context, _a1 *s3.ListPartsInput, _a2 func(*s3.ListPartsOutput, bool) bool, _a3 ...func(*s3.Options)) error {
 	_va := make([]interface{}, len(_a3))
 	for _i := range _a3 {
 		_va[_i] = _a3[_i]
@@ -245,7 +245,7 @@ func (_m *mockServiceAPI) ListPartsPages(_a0 context.Context, _a1 *s3.ListPartsI
 	ret := _m.Called(_ca...)
 
 	var r0 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.ListPartsInput, func(*s3.ListPartsOutput, bool) bool, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.ListPartsInput, func(*s3.ListPartsOutput, bool) bool, ...func(*s3.Options)) error); ok {
 		r0 = rf(_a0, _a1, _a2, _a3...)
 	} else {
 		r0 = ret.Error(0)
@@ -255,7 +255,7 @@ func (_m *mockServiceAPI) ListPartsPages(_a0 context.Context, _a1 *s3.ListPartsI
 }
 
 // PutObject provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) PutObject(_a0 context.Context, _a1 *s3.PutObjectInput, _a2 ...OptionFn) (*s3.PutObjectOutput, error) {
+func (_m *mockServiceAPI) PutObject(_a0 context.Context, _a1 *s3.PutObjectInput, _a2 ...func(*s3.Options)) (*s3.PutObjectOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -267,10 +267,10 @@ func (_m *mockServiceAPI) PutObject(_a0 context.Context, _a1 *s3.PutObjectInput,
 
 	var r0 *s3.PutObjectOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.PutObjectInput, ...OptionFn) (*s3.PutObjectOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.PutObjectInput, ...func(*s3.Options)) (*s3.PutObjectOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.PutObjectInput, ...OptionFn) *s3.PutObjectOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.PutObjectInput, ...func(*s3.Options)) *s3.PutObjectOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -278,7 +278,7 @@ func (_m *mockServiceAPI) PutObject(_a0 context.Context, _a1 *s3.PutObjectInput,
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.PutObjectInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.PutObjectInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -288,7 +288,7 @@ func (_m *mockServiceAPI) PutObject(_a0 context.Context, _a1 *s3.PutObjectInput,
 }
 
 // UploadPart provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) UploadPart(_a0 context.Context, _a1 *s3.UploadPartInput, _a2 ...OptionFn) (*s3.UploadPartOutput, error) {
+func (_m *mockServiceAPI) UploadPart(_a0 context.Context, _a1 *s3.UploadPartInput, _a2 ...func(*s3.Options)) (*s3.UploadPartOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -300,10 +300,10 @@ func (_m *mockServiceAPI) UploadPart(_a0 context.Context, _a1 *s3.UploadPartInpu
 
 	var r0 *s3.UploadPartOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartInput, ...OptionFn) (*s3.UploadPartOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartInput, ...func(*s3.Options)) (*s3.UploadPartOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartInput, ...OptionFn) *s3.UploadPartOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartInput, ...func(*s3.Options)) *s3.UploadPartOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -311,7 +311,7 @@ func (_m *mockServiceAPI) UploadPart(_a0 context.Context, _a1 *s3.UploadPartInpu
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
@@ -321,7 +321,7 @@ func (_m *mockServiceAPI) UploadPart(_a0 context.Context, _a1 *s3.UploadPartInpu
 }
 
 // UploadPartCopy provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) UploadPartCopy(_a0 context.Context, _a1 *s3.UploadPartCopyInput, _a2 ...OptionFn) (*s3.UploadPartCopyOutput, error) {
+func (_m *mockServiceAPI) UploadPartCopy(_a0 context.Context, _a1 *s3.UploadPartCopyInput, _a2 ...func(*s3.Options)) (*s3.UploadPartCopyOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -333,10 +333,10 @@ func (_m *mockServiceAPI) UploadPartCopy(_a0 context.Context, _a1 *s3.UploadPart
 
 	var r0 *s3.UploadPartCopyOutput
 	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) (*s3.UploadPartCopyOutput, error)); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...func(*s3.Options)) (*s3.UploadPartCopyOutput, error)); ok {
 		return rf(_a0, _a1, _a2...)
 	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) *s3.UploadPartCopyOutput); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...func(*s3.Options)) *s3.UploadPartCopyOutput); ok {
 		r0 = rf(_a0, _a1, _a2...)
 	} else {
 		if ret.Get(0) != nil {
@@ -344,7 +344,7 @@ func (_m *mockServiceAPI) UploadPartCopy(_a0 context.Context, _a1 *s3.UploadPart
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartCopyInput, ...func(*s3.Options)) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)
