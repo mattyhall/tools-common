@@ -14,8 +14,8 @@ type mockServiceAPI struct {
 	mock.Mock
 }
 
-// AbortMultipartUploadWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) AbortMultipartUploadWithContext(_a0 context.Context, _a1 *s3.AbortMultipartUploadInput, _a2 ...OptionFn) (*s3.AbortMultipartUploadOutput, error) {
+// AbortMultipartUpload provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) AbortMultipartUpload(_a0 context.Context, _a1 *s3.AbortMultipartUploadInput, _a2 ...OptionFn) (*s3.AbortMultipartUploadOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -47,8 +47,8 @@ func (_m *mockServiceAPI) AbortMultipartUploadWithContext(_a0 context.Context, _
 	return r0, r1
 }
 
-// CompleteMultipartUploadWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) CompleteMultipartUploadWithContext(_a0 context.Context, _a1 *s3.CompleteMultipartUploadInput, _a2 ...OptionFn) (*s3.CompleteMultipartUploadOutput, error) {
+// CompleteMultipartUpload provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) CompleteMultipartUpload(_a0 context.Context, _a1 *s3.CompleteMultipartUploadInput, _a2 ...OptionFn) (*s3.CompleteMultipartUploadOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -80,8 +80,8 @@ func (_m *mockServiceAPI) CompleteMultipartUploadWithContext(_a0 context.Context
 	return r0, r1
 }
 
-// CreateMultipartUploadWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) CreateMultipartUploadWithContext(_a0 context.Context, _a1 *s3.CreateMultipartUploadInput, _a2 ...OptionFn) (*s3.CreateMultipartUploadOutput, error) {
+// CreateMultipartUpload provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) CreateMultipartUpload(_a0 context.Context, _a1 *s3.CreateMultipartUploadInput, _a2 ...OptionFn) (*s3.CreateMultipartUploadOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -113,8 +113,8 @@ func (_m *mockServiceAPI) CreateMultipartUploadWithContext(_a0 context.Context, 
 	return r0, r1
 }
 
-// DeleteObjectsWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) DeleteObjectsWithContext(_a0 context.Context, _a1 *s3.DeleteObjectsInput, _a2 ...OptionFn) (*s3.DeleteObjectsOutput, error) {
+// DeleteObjects provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) DeleteObjects(_a0 context.Context, _a1 *s3.DeleteObjectsInput, _a2 ...OptionFn) (*s3.DeleteObjectsOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -146,8 +146,8 @@ func (_m *mockServiceAPI) DeleteObjectsWithContext(_a0 context.Context, _a1 *s3.
 	return r0, r1
 }
 
-// GetObjectWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) GetObjectWithContext(_a0 context.Context, _a1 *s3.GetObjectInput, _a2 ...OptionFn) (*s3.GetObjectOutput, error) {
+// GetObject provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) GetObject(_a0 context.Context, _a1 *s3.GetObjectInput, _a2 ...OptionFn) (*s3.GetObjectOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -179,8 +179,8 @@ func (_m *mockServiceAPI) GetObjectWithContext(_a0 context.Context, _a1 *s3.GetO
 	return r0, r1
 }
 
-// HeadObjectWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) HeadObjectWithContext(_a0 context.Context, _a1 *s3.HeadObjectInput, _a2 ...OptionFn) (*s3.HeadObjectOutput, error) {
+// HeadObject provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) HeadObject(_a0 context.Context, _a1 *s3.HeadObjectInput, _a2 ...OptionFn) (*s3.HeadObjectOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -212,8 +212,8 @@ func (_m *mockServiceAPI) HeadObjectWithContext(_a0 context.Context, _a1 *s3.Hea
 	return r0, r1
 }
 
-// ListObjectsV2PagesWithContext provides a mock function with given fields: _a0, _a1, _a2, _a3
-func (_m *mockServiceAPI) ListObjectsV2PagesWithContext(_a0 context.Context, _a1 *s3.ListObjectsV2Input, _a2 func(*s3.ListObjectsV2Output, bool) bool, _a3 ...OptionFn) error {
+// ListObjectsV2Pages provides a mock function with given fields: _a0, _a1, _a2, _a3
+func (_m *mockServiceAPI) ListObjectsV2Pages(_a0 context.Context, _a1 *s3.ListObjectsV2Input, _a2 func(*s3.ListObjectsV2Output, bool) bool, _a3 ...OptionFn) error {
 	_va := make([]interface{}, len(_a3))
 	for _i := range _a3 {
 		_va[_i] = _a3[_i]
@@ -233,8 +233,8 @@ func (_m *mockServiceAPI) ListObjectsV2PagesWithContext(_a0 context.Context, _a1
 	return r0
 }
 
-// ListPartsPagesWithContext provides a mock function with given fields: _a0, _a1, _a2, _a3
-func (_m *mockServiceAPI) ListPartsPagesWithContext(_a0 context.Context, _a1 *s3.ListPartsInput, _a2 func(*s3.ListPartsOutput, bool) bool, _a3 ...OptionFn) error {
+// ListPartsPages provides a mock function with given fields: _a0, _a1, _a2, _a3
+func (_m *mockServiceAPI) ListPartsPages(_a0 context.Context, _a1 *s3.ListPartsInput, _a2 func(*s3.ListPartsOutput, bool) bool, _a3 ...OptionFn) error {
 	_va := make([]interface{}, len(_a3))
 	for _i := range _a3 {
 		_va[_i] = _a3[_i]
@@ -254,8 +254,8 @@ func (_m *mockServiceAPI) ListPartsPagesWithContext(_a0 context.Context, _a1 *s3
 	return r0
 }
 
-// PutObjectWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) PutObjectWithContext(_a0 context.Context, _a1 *s3.PutObjectInput, _a2 ...OptionFn) (*s3.PutObjectOutput, error) {
+// PutObject provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) PutObject(_a0 context.Context, _a1 *s3.PutObjectInput, _a2 ...OptionFn) (*s3.PutObjectOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -287,41 +287,8 @@ func (_m *mockServiceAPI) PutObjectWithContext(_a0 context.Context, _a1 *s3.PutO
 	return r0, r1
 }
 
-// UploadPartCopyWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) UploadPartCopyWithContext(_a0 context.Context, _a1 *s3.UploadPartCopyInput, _a2 ...OptionFn) (*s3.UploadPartCopyOutput, error) {
-	_va := make([]interface{}, len(_a2))
-	for _i := range _a2 {
-		_va[_i] = _a2[_i]
-	}
-	var _ca []interface{}
-	_ca = append(_ca, _a0, _a1)
-	_ca = append(_ca, _va...)
-	ret := _m.Called(_ca...)
-
-	var r0 *s3.UploadPartCopyOutput
-	var r1 error
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) (*s3.UploadPartCopyOutput, error)); ok {
-		return rf(_a0, _a1, _a2...)
-	}
-	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) *s3.UploadPartCopyOutput); ok {
-		r0 = rf(_a0, _a1, _a2...)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*s3.UploadPartCopyOutput)
-		}
-	}
-
-	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) error); ok {
-		r1 = rf(_a0, _a1, _a2...)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
-// UploadPartWithContext provides a mock function with given fields: _a0, _a1, _a2
-func (_m *mockServiceAPI) UploadPartWithContext(_a0 context.Context, _a1 *s3.UploadPartInput, _a2 ...OptionFn) (*s3.UploadPartOutput, error) {
+// UploadPart provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) UploadPart(_a0 context.Context, _a1 *s3.UploadPartInput, _a2 ...OptionFn) (*s3.UploadPartOutput, error) {
 	_va := make([]interface{}, len(_a2))
 	for _i := range _a2 {
 		_va[_i] = _a2[_i]
@@ -345,6 +312,39 @@ func (_m *mockServiceAPI) UploadPartWithContext(_a0 context.Context, _a1 *s3.Upl
 	}
 
 	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartInput, ...OptionFn) error); ok {
+		r1 = rf(_a0, _a1, _a2...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// UploadPartCopy provides a mock function with given fields: _a0, _a1, _a2
+func (_m *mockServiceAPI) UploadPartCopy(_a0 context.Context, _a1 *s3.UploadPartCopyInput, _a2 ...OptionFn) (*s3.UploadPartCopyOutput, error) {
+	_va := make([]interface{}, len(_a2))
+	for _i := range _a2 {
+		_va[_i] = _a2[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, _a0, _a1)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *s3.UploadPartCopyOutput
+	var r1 error
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) (*s3.UploadPartCopyOutput, error)); ok {
+		return rf(_a0, _a1, _a2...)
+	}
+	if rf, ok := ret.Get(0).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) *s3.UploadPartCopyOutput); ok {
+		r0 = rf(_a0, _a1, _a2...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*s3.UploadPartCopyOutput)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(context.Context, *s3.UploadPartCopyInput, ...OptionFn) error); ok {
 		r1 = rf(_a0, _a1, _a2...)
 	} else {
 		r1 = ret.Error(1)

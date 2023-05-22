@@ -62,7 +62,7 @@ func (c *Client) GetObject(ctx context.Context, bucket, key string, br *objval.B
 		input.Range = aws.String(br.ToRangeHeader())
 	}
 
-	resp, err := c.serviceAPI.GetObjectWithContext(ctx, input)
+	resp, err := c.serviceAPI.GetObject(ctx, input)
 	if err != nil {
 		return nil, handleError(input.Bucket, input.Key, err)
 	}
@@ -87,7 +87,7 @@ func (c *Client) GetObjectAttrs(ctx context.Context, bucket, key string) (*objva
 		Key:    aws.String(key),
 	}
 
-	resp, err := c.serviceAPI.HeadObjectWithContext(ctx, input)
+	resp, err := c.serviceAPI.HeadObject(ctx, input)
 	if err != nil {
 		return nil, handleError(input.Bucket, input.Key, err)
 	}
@@ -110,7 +110,7 @@ func (c *Client) PutObject(ctx context.Context, bucket, key string, body io.Read
 		ChecksumAlgorithm: types.ChecksumAlgorithmSha256,
 	}
 
-	_, err := c.serviceAPI.PutObjectWithContext(ctx, input)
+	_, err := c.serviceAPI.PutObject(ctx, input)
 
 	return handleError(input.Bucket, input.Key, err)
 }
@@ -262,7 +262,7 @@ func (c *Client) deleteDirectory(
 	}
 
 	// It's important we use an assignment expression here to avoid overwriting the error assigned by our callback
-	if err := c.serviceAPI.ListObjectsV2PagesWithContext(ctx, input, callback); err != nil {
+	if err := c.serviceAPI.ListObjectsV2Pages(ctx, input, callback); err != nil {
 		return handleError(input.Bucket, nil, err)
 	}
 
@@ -271,9 +271,9 @@ func (c *Client) deleteDirectory(
 
 // deleteObjects performs a batched delete operation for a single page (<=1000) of keys.
 func (c *Client) deleteObjects(ctx context.Context, bucket string, keys ...string) error {
-	// We use ListObjectsV2PagesWithContext to delete a directory. This takes deleteObjects
+	// We use ListObjectsV2Pages to delete a directory. This takes deleteObjects
 	// as a callback whenever it receives a page, even if that page is empty. We then call
-	// DeleteObjectsWithContext even if there aren't any keys. If no keys are found we return
+	// DeleteObjects even if there aren't any keys. If no keys are found we return
 	// early to avoid returning the error
 	if len(keys) == 0 {
 		return nil
@@ -288,7 +288,7 @@ func (c *Client) deleteObjects(ctx context.Context, bucket string, keys ...strin
 		input.Delete.Objects = append(input.Delete.Objects, types.ObjectIdentifier{Key: aws.String(key)})
 	}
 
-	resp, err := c.serviceAPI.DeleteObjectsWithContext(ctx, input)
+	resp, err := c.serviceAPI.DeleteObjects(ctx, input)
 	if err != nil {
 		return handleError(input.Bucket, nil, err)
 	}
@@ -326,7 +326,7 @@ func (c *Client) IterateObjects(ctx context.Context, bucket, prefix, delimiter s
 	}
 
 	// It's important we use an assignment expression here to avoid overwriting the error assigned by our callback
-	if err := c.serviceAPI.ListObjectsV2PagesWithContext(ctx, input, callback); err != nil {
+	if err := c.serviceAPI.ListObjectsV2Pages(ctx, input, callback); err != nil {
 		return handleError(input.Bucket, nil, err)
 	}
 
@@ -368,7 +368,7 @@ func (c *Client) CreateMultipartUpload(ctx context.Context, bucket, key string) 
 		Key:    aws.String(key),
 	}
 
-	resp, err := c.serviceAPI.CreateMultipartUploadWithContext(ctx, input)
+	resp, err := c.serviceAPI.CreateMultipartUpload(ctx, input)
 	if err != nil {
 		return "", handleError(input.Bucket, input.Key, err)
 	}
@@ -385,7 +385,7 @@ func (c *Client) ListParts(ctx context.Context, bucket, id, key string) ([]objva
 		Key:      aws.String(key),
 	}
 
-	err := c.serviceAPI.ListPartsPagesWithContext(ctx, input, func(page *s3.ListPartsOutput, _ bool) bool {
+	err := c.serviceAPI.ListPartsPages(ctx, input, func(page *s3.ListPartsOutput, _ bool) bool {
 		for _, part := range page.Parts {
 			parts = append(parts, objval.Part{ID: *part.ETag, Size: part.Size})
 		}
@@ -441,7 +441,7 @@ func (c *Client) UploadPart(
 		ChecksumAlgorithm: types.ChecksumAlgorithmSha256,
 	}
 
-	output, err := c.serviceAPI.UploadPartWithContext(ctx, input)
+	output, err := c.serviceAPI.UploadPart(ctx, input)
 	if err != nil {
 		return objval.Part{}, handleError(input.Bucket, input.Key, err)
 	}
@@ -465,7 +465,7 @@ func (c *Client) UploadPartCopy(
 		UploadId:        aws.String(id),
 	}
 
-	output, err := c.serviceAPI.UploadPartCopyWithContext(ctx, input)
+	output, err := c.serviceAPI.UploadPartCopy(ctx, input)
 	if err != nil {
 		return objval.Part{}, handleError(input.Bucket, input.Key, err)
 	}
@@ -487,7 +487,7 @@ func (c *Client) CompleteMultipartUpload(ctx context.Context, bucket, id, key st
 		MultipartUpload: &types.CompletedMultipartUpload{Parts: converted},
 	}
 
-	_, err := c.serviceAPI.CompleteMultipartUploadWithContext(ctx, input)
+	_, err := c.serviceAPI.CompleteMultipartUpload(ctx, input)
 
 	return handleError(input.Bucket, input.Key, err)
 }
@@ -499,7 +499,7 @@ func (c *Client) AbortMultipartUpload(ctx context.Context, bucket, id, key strin
 		UploadId: aws.String(id),
 	}
 
-	_, err := c.serviceAPI.AbortMultipartUploadWithContext(ctx, input)
+	_, err := c.serviceAPI.AbortMultipartUpload(ctx, input)
 	if err != nil && !isNoSuchUpload(err) {
 		return handleError(input.Bucket, input.Key, err)
 	}
