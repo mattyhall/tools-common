@@ -16,9 +16,9 @@ import (
 	"github.com/couchbase/tools-common/objstore/objval"
 	"github.com/couchbase/tools-common/system"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	"github.com/aws/aws-sdk-go-v2/service/s3"
+	"github.com/aws/aws-sdk-go-v2/service/s3/types"
 )
 
 // Client implements the 'objcli.Client' interface allowing the creation/management of objects stored in AWS S3.
@@ -69,7 +69,7 @@ func (c *Client) GetObject(ctx context.Context, bucket, key string, br *objval.B
 
 	attrs := objval.ObjectAttrs{
 		Key:          key,
-		Size:         *resp.ContentLength,
+		Size:         resp.ContentLength,
 		LastModified: resp.LastModified,
 	}
 
@@ -95,7 +95,7 @@ func (c *Client) GetObjectAttrs(ctx context.Context, bucket, key string) (*objva
 	attrs := &objval.ObjectAttrs{
 		Key:          key,
 		ETag:         *resp.ETag,
-		Size:         *resp.ContentLength,
+		Size:         resp.ContentLength,
 		LastModified: resp.LastModified,
 	}
 
@@ -107,7 +107,7 @@ func (c *Client) PutObject(ctx context.Context, bucket, key string, body io.Read
 		Body:              body,
 		Bucket:            aws.String(bucket),
 		Key:               aws.String(key),
-		ChecksumAlgorithm: aws.String(s3.ChecksumAlgorithmSha256),
+		ChecksumAlgorithm: types.ChecksumAlgorithmSha256,
 	}
 
 	_, err := c.serviceAPI.PutObjectWithContext(ctx, input)
@@ -281,11 +281,11 @@ func (c *Client) deleteObjects(ctx context.Context, bucket string, keys ...strin
 
 	input := &s3.DeleteObjectsInput{
 		Bucket: aws.String(bucket),
-		Delete: &s3.Delete{Quiet: aws.Bool(true)},
+		Delete: &types.Delete{Quiet: true},
 	}
 
 	for _, key := range keys {
-		input.Delete.Objects = append(input.Delete.Objects, &s3.ObjectIdentifier{Key: aws.String(key)})
+		input.Delete.Objects = append(input.Delete.Objects, types.ObjectIdentifier{Key: aws.String(key)})
 	}
 
 	resp, err := c.serviceAPI.DeleteObjectsWithContext(ctx, input)
@@ -293,10 +293,13 @@ func (c *Client) deleteObjects(ctx context.Context, bucket string, keys ...strin
 		return handleError(input.Bucket, nil, err)
 	}
 
-	for _, err := range resp.Errors {
-		if awsErr := awserr.New(*err.Code, *err.Message, nil); !isKeyNotFound(awsErr) {
-			return handleError(input.Bucket, err.Key, awsErr)
-		}
+	for range resp.Errors {
+		return fmt.Errorf("got an error")
+		// TODO: Work out how to fix this
+
+		// if awsErr := awserr.New(*err.Code, *err.Message, nil); !isKeyNotFound(awsErr) {
+		// 	return handleError(input.Bucket, err.Key, awsErr)
+		// }
 	}
 
 	return nil
@@ -342,7 +345,7 @@ func (c *Client) handlePage(page *s3.ListObjectsV2Output, include, exclude []*re
 	}
 
 	for _, o := range page.Contents {
-		converted = append(converted, &objval.ObjectAttrs{Key: *o.Key, Size: *o.Size, LastModified: o.LastModified})
+		converted = append(converted, &objval.ObjectAttrs{Key: *o.Key, Size: o.Size, LastModified: o.LastModified})
 	}
 
 	for _, attrs := range converted {
@@ -384,7 +387,7 @@ func (c *Client) ListParts(ctx context.Context, bucket, id, key string) ([]objva
 
 	err := c.serviceAPI.ListPartsPagesWithContext(ctx, input, func(page *s3.ListPartsOutput, _ bool) bool {
 		for _, part := range page.Parts {
-			parts = append(parts, objval.Part{ID: *part.ETag, Size: *part.Size})
+			parts = append(parts, objval.Part{ID: *part.ETag, Size: part.Size})
 		}
 
 		return true
@@ -401,10 +404,29 @@ func (c *Client) ListParts(ctx context.Context, bucket, id, key string) ([]objva
 	return nil, handleError(input.Bucket, input.Key, err)
 }
 
+func seekerLen(r io.ReadSeeker) (int64, error) {
+	offset, err := r.Seek(0, io.SeekStart)
+	if err != nil {
+		return 0, fmt.Errorf("could not seek to beginning")
+	}
+
+	end, err := r.Seek(0, io.SeekEnd)
+	if err != nil {
+		return 0, fmt.Errorf("could not seek to end")
+	}
+
+	_, err = r.Seek(offset, io.SeekStart)
+	if err != nil {
+		return 0, fmt.Errorf("could not seek to original position")
+	}
+
+	return end - offset, nil
+}
+
 func (c *Client) UploadPart(
 	ctx context.Context, bucket, id, key string, number int, body io.ReadSeeker,
 ) (objval.Part, error) {
-	size, err := aws.SeekerLen(body)
+	size, err := seekerLen(body)
 	if err != nil {
 		return objval.Part{}, fmt.Errorf("failed to determine body length: %w", err)
 	}
@@ -412,11 +434,11 @@ func (c *Client) UploadPart(
 	input := &s3.UploadPartInput{
 		Body:              body,
 		Bucket:            aws.String(bucket),
-		ContentLength:     aws.Int64(size),
+		ContentLength:     size,
 		Key:               aws.String(key),
-		PartNumber:        aws.Int64(int64(number)),
+		PartNumber:        int32(number),
 		UploadId:          aws.String(id),
-		ChecksumAlgorithm: aws.String(s3.ChecksumAlgorithmSha256),
+		ChecksumAlgorithm: types.ChecksumAlgorithmSha256,
 	}
 
 	output, err := c.serviceAPI.UploadPartWithContext(ctx, input)
@@ -439,7 +461,7 @@ func (c *Client) UploadPartCopy(
 		CopySource:      aws.String(path.Join(bucket, src)),
 		CopySourceRange: aws.String(br.ToRangeHeader()),
 		Key:             aws.String(dst),
-		PartNumber:      aws.Int64(int64(number)),
+		PartNumber:      int32(number),
 		UploadId:        aws.String(id),
 	}
 
@@ -452,17 +474,17 @@ func (c *Client) UploadPartCopy(
 }
 
 func (c *Client) CompleteMultipartUpload(ctx context.Context, bucket, id, key string, parts ...objval.Part) error {
-	converted := make([]*s3.CompletedPart, len(parts))
+	converted := make([]types.CompletedPart, len(parts))
 
 	for index, part := range parts {
-		converted[index] = &s3.CompletedPart{ETag: aws.String(part.ID), PartNumber: aws.Int64(int64(part.Number))}
+		converted[index] = types.CompletedPart{ETag: aws.String(part.ID), PartNumber: int32(part.Number)}
 	}
 
 	input := &s3.CompleteMultipartUploadInput{
 		Bucket:          aws.String(bucket),
 		Key:             aws.String(key),
 		UploadId:        aws.String(id),
-		MultipartUpload: &s3.CompletedMultipartUpload{Parts: converted},
+		MultipartUpload: &types.CompletedMultipartUpload{Parts: converted},
 	}
 
 	_, err := c.serviceAPI.CompleteMultipartUploadWithContext(ctx, input)
