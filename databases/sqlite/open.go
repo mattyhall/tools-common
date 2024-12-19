@@ -3,6 +3,8 @@ package sqlite
 import (
 	"database/sql"
 
+	sqlite3 "github.com/mattn/go-sqlite3"
+
 	"github.com/couchbase/tools-common/sync/v2"
 )
 
@@ -20,8 +22,18 @@ func Open(path string) (*sql.DB, error) {
 	// Attempt to read from the barrier channel
 	ok := initBarrier.Wait()
 
+	if ok {
+		sql.Register("sqlite3_with_reserved_bytes", &sqlite3.SQLiteDriver{
+			ConnectHook: func(conn *sqlite3.SQLiteConn) error {
+				return conn.SetFileControlInt("", sqlite3.SQLITE_FCNTL_RESERVE_BYTES, 8)
+			},
+		})
+
+		sqlite3.InitCksumVFS()
+	}
+
 	// Open an SQLite database at the request location
-	db, err := sql.Open("sqlite3", path)
+	db, err := sql.Open("sqlite3_with_reserved_bytes", path)
 	if err != nil {
 		if ok {
 			initBarrier.Failed()
